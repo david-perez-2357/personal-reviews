@@ -1,0 +1,6 @@
+{
+  "appTitle": "My Ionic App",
+  "welcome": "Welcome to our app!",
+  "welcomeUser": "Welcome, {{name}}!",
+  "changeLanguage": "Change Language"
+}
