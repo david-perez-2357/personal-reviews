@@ -83,7 +83,3 @@ out/
 /.idea/**/dataSources.ids
 /.idea/**/sqlDataSources.xml
 /.idea/**/dynamic.xml
-
-### Android folder ###
-android
-ios
