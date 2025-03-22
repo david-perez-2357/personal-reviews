@@ -1,0 +1,88 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+### Node.js dependencies ###
+node_modules/
+npm-debug.log
+yarn-error.log
+
+### Vite build output ###
+dist/
+.vite/
+
+### Ionic specific ###
+.platforms/
+.plugins/
+www/
+
+### Android specific ###
+android/app/build/
+android/.gradle/
+android/.idea/
+android/local.properties
+android/key.properties
+android/app/.cxx/
+android/app/.externalNativeBuild/
+
+### iOS specific ###
+ios/Pods/
+ios/build/
+ios/.DS_Store
+
+### SQLite Database ###
+*.db
+*.db-wal
+*.db-shm
+
+### Environment files ###
+.env*
+
+### Logs ###
+logs/
+*.log
+
+### Editor and OS specific ###
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+### WebStorm & IntelliJ IDEA specific ###
+.idea/
+out/
+*.iml
+*.ipr
+*.iws
+
+### JetBrains caches ###
+/.idea/**/workspace.xml
+/.idea/**/tasks.xml
+/.idea/**/shelf/
+/.idea/**/dataSources/
+/.idea/**/dataSources.ids
+/.idea/**/sqlDataSources.xml
+/.idea/**/dynamic.xml
