@@ -1,9 +1,9 @@
-import './App.css'
+import '@/styles/App.css'
 import '@ionic/react/css/core.css';
 import {IonApp, IonContent} from "@ionic/react";
 import {Button} from "@/components/ui/button.tsx";
 import { useEffect } from "react";
-import { sqliteService } from "./lib/sqliteService";
+import { sqliteService } from "@/lib/sqliteService.ts";
 
 function App() {
     useEffect(() => {
@@ -14,15 +14,13 @@ function App() {
     }, []);
 
   return (
-    <>
-        <IonApp>
-            <IonContent>
-                <div className="w-full h-full ">
-                    <Button>Pepep</Button>
-                </div>
-            </IonContent>
-        </IonApp>
-    </>
+    <IonApp>
+        <IonContent>
+            <div className="w-full h-full ">
+                <Button>Pepep</Button>
+            </div>
+        </IonContent>
+    </IonApp>
   )
 }
 
