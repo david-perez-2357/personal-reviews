@@ -1,0 +1,7 @@
+.dark ion-content {
+    --ion-background-color:#222831;
+}
+
+.light ion-content {
+    --ion-background-color:#EEEEEE;
+}
