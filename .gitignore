@@ -61,18 +61,15 @@ ios/.DS_Store
 
 ### Logs ###
 logs/
-*.log
 
 ### Editor and OS specific ###
 .vscode/
 .idea/
 *.swp
 *.swo
-.DS_Store
 Thumbs.db
 
 ### WebStorm & IntelliJ IDEA specific ###
-.idea/
 out/
 *.iml
 *.ipr
@@ -86,3 +83,7 @@ out/
 /.idea/**/dataSources.ids
 /.idea/**/sqlDataSources.xml
 /.idea/**/dynamic.xml
+
+### Android folder ###
+android
+ios
