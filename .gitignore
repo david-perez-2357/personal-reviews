@@ -38,9 +38,9 @@ dist/
 www/
 
 ### Android specific ###
-android/app/build/
-android/.gradle/
-android/.idea/
+android/app/build/*
+android/.gradle/*
+android/.idea/*
 android/local.properties
 android/key.properties
 android/app/.cxx/
