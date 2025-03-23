@@ -1,17 +1,12 @@
 import '@/styles/App.css'
 import '@ionic/react/css/core.css';
-import {IonApp, IonContent} from "@ionic/react";
-import {Button} from "@/components/ui/button.tsx";
+import { IonApp, IonContent } from "@ionic/react";
 import { useEffect } from "react";
-import { sqliteService } from "@/lib/sqliteService.ts";
+import { initDB } from "@/lib/database";
 import { ThemeProvider } from "@/components/theme-provider";
-
 
 function App() {
     useEffect(() => {
-        const initDB = async () => {
-            await sqliteService.initializeDB();
-        };
         initDB();
     }, []);
 
@@ -20,7 +15,9 @@ function App() {
         <IonApp>
             <IonContent>
                 <div>
-                    <Button>Pepep</Button>
+                    <div className="flex justify-center mt-8">
+
+                    </div>
                 </div>
             </IonContent>
         </IonApp>
