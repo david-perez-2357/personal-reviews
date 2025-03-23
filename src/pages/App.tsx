@@ -5,6 +5,11 @@ import {Button} from "@/components/ui/button.tsx";
 import { useEffect } from "react";
 import { sqliteService } from "@/lib/sqliteService.ts";
 import { ThemeProvider } from "@/components/theme-provider";
+import {
+    BrowserRouter,
+    Routes,
+    Route, Link
+} from "react-router-dom";
 
 
 function App() {
@@ -20,7 +25,14 @@ function App() {
         <IonApp>
             <IonContent>
                 <div>
-                    <Button>Pepep</Button>
+                    <Button>
+                        pepep
+                    </Button>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/" element={<Link to={"/home"}>Home</Link>} />
+                        </Routes>
+                    </BrowserRouter>
                 </div>
             </IonContent>
         </IonApp>
