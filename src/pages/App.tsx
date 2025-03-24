@@ -9,6 +9,7 @@ import {
     Routes,
     Route, Link
 } from "react-router-dom";
+import {Button} from "@/components/ui/button";
 
 function App() {
     useEffect(() => {
