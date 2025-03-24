@@ -1,22 +1,18 @@
 import '@/styles/App.css'
 import '@ionic/react/css/core.css';
-import {IonApp, IonContent} from "@ionic/react";
-import {Button} from "@/components/ui/button.tsx";
+import { IonApp, IonContent } from "@ionic/react";
 import { useEffect } from "react";
-import { sqliteService } from "@/lib/sqliteService.ts";
+import { initDB } from "@/lib/database-service";
 import { ThemeProvider } from "@/components/theme-provider";
 import {
     BrowserRouter,
     Routes,
     Route, Link
 } from "react-router-dom";
-
+import {Button} from "@/components/ui/button";
 
 function App() {
     useEffect(() => {
-        const initDB = async () => {
-            await sqliteService.initializeDB();
-        };
         initDB();
     }, []);
 
