@@ -1,5 +1,6 @@
 import {checkDB, db} from "@/lib/database-service";
 import {Item} from "@/models/Item";
+import {Origin} from "@/models/Origin";
 
 /**
  * Inserta un ítem en la base de datos.
@@ -37,5 +38,24 @@ export const getItems = async (): Promise<Item[]> => {
     } catch (error) {
         console.error("❌ Error al obtener ítems:", error);
         return [];
+    }
+};
+
+/**
+ * Inserta una relación de origen en la base de datos.
+ * @param origin
+ */
+export const insertOrigin = async (origin: Origin): Promise<boolean> => {
+    if (!checkDB()) return false;
+
+    try {
+        const query = `INSERT INTO origin_item (item1_id, item2_id) VALUES (?, ?)`;
+        const values = [origin.origin_id, origin.item_id];
+
+        await db!.run(query, values);
+        return true;
+    } catch (error) {
+        console.error("❌ Error al insertar origen:", error);
+        return false;
     }
 };
