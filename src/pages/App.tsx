@@ -1,10 +1,13 @@
 import '@/styles/App.css'
 import '@ionic/react/css/core.css';
-import {IonApp, IonContent} from "@ionic/react";
-import {Button} from "@/components/ui/button.tsx";
+import { IonApp, IonContent } from "@ionic/react";
+import { Button } from "@/components/ui/button.tsx";
 import { useEffect } from "react";
 import { sqliteService } from "@/lib/sqliteService.ts";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SafeArea } from "@capacitor-community/safe-area";
+import { initialize } from '@capacitor-community/safe-area';
+import '@capacitor-community/safe-area';
 import {
     BrowserRouter,
     Routes,
@@ -13,6 +16,18 @@ import {
 
 
 function App() {
+    SafeArea.enable({
+        config: {
+            customColorsForSystemBars: true,
+            statusBarColor: '#00000000', // transparent
+            statusBarContent: 'light',
+            navigationBarColor: '#00000000', // transparent
+            navigationBarContent: 'light',
+        }
+    });
+
+    initialize();
+
     useEffect(() => {
         const initDB = async () => {
             await sqliteService.initializeDB();
@@ -23,8 +38,8 @@ function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
         <IonApp>
-            <IonContent>
-                <div>
+            <IonContent class="ion-padding">
+                <div className="safe-area-padding">
                     <Button>
                         pepep
                     </Button>
