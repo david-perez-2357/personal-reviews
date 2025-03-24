@@ -1,4 +1,4 @@
 export interface Origin {
-    item1_id: number;
-    item2_id: number;
+    origin_id: number;
+    item_id: number;
 }

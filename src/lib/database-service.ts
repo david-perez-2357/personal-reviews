@@ -43,9 +43,9 @@ export const initDB = async () => {
                 category_id INTEGER NOT NULL,
                 FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
             );`,
-            `CREATE TABLE IF NOT EXISTS origin (
-                item1_id INTEGER NOT NULL,
-                item2_id INTEGER NOT NULL,
+            `CREATE TABLE IF NOT EXISTS origin_item (
+                origin_id INTEGER NOT NULL,
+                item_id INTEGER NOT NULL,
                 PRIMARY KEY (item1_id, item2_id),
                 FOREIGN KEY (item1_id) REFERENCES item(id) ON DELETE CASCADE,
                 FOREIGN KEY (item2_id) REFERENCES item(id) ON DELETE CASCADE
