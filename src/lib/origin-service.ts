@@ -1,4 +1,4 @@
-import {checkDB, db} from "@/lib/database";
+import {checkDB, db} from "@/lib/database-service";
 import {Origin} from "@/models/Origin";
 
 /**
@@ -10,7 +10,7 @@ export const insertOrigin = async (origin: Origin): Promise<boolean> => {
 
     try {
         const query = `INSERT INTO origin (item1_id, item2_id) VALUES (?, ?)`;
-        const values = [origin.item1_id, origin.item2_id];
+        const values = [origin.origin_id, origin.item_id];
 
         await db!.run(query, values);
         return true;

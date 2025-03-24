@@ -1,5 +1,5 @@
 import {Category} from "@/models/Category";
-import {checkDB, db} from "@/lib/database";
+import {checkDB, db} from "@/lib/database-service";
 import {CategoryRating} from "@/models/CategoryRating";
 import {CategoryRatingValue} from "@/models/CategoryRatingValue";
 

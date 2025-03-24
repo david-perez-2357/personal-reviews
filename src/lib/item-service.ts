@@ -1,4 +1,4 @@
-import {checkDB, db} from "@/lib/database";
+import {checkDB, db} from "@/lib/database-service";
 import {Item} from "@/models/Item";
 
 /**
