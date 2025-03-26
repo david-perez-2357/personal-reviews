@@ -3,6 +3,7 @@ import {Box, Ellipsis, Star} from "lucide-react";
 import {useCurrentPath} from "@/hooks/get-location";
 import {memo, useEffect} from "react";
 import { useTranslation } from 'react-i18next';
+import {redirect} from "react-router";
 
 const routes = [
     {
@@ -26,7 +27,7 @@ const TabBar = memo(() => {
     useEffect(() => {
         // Redirect to the first tab if the current path is /
         if (pathname === "/") {
-            window.location.href = routes[0].href;
+            redirect(routes[0].href);
         }
     }, [pathname]);
 
