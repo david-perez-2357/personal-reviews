@@ -1,10 +1,11 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
+
+import english from '@public/locales/en/translation.json';
+import spanish from '@public/locales/es/translation.json';
 
 i18n
-    .use(HttpApi) // Permite cargar traducciones desde archivos JSON
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
@@ -13,8 +14,13 @@ i18n
         interpolation: {
             escapeValue: false
         },
-        backend: {
-            loadPath: '/locales/{{lng}}/translation.json' // Ruta de los archivos JSON
+        resources: {
+            en: {
+                translation: english
+            },
+            es: {
+                translation: spanish
+            }
         }
     });
 
