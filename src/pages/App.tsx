@@ -19,25 +19,23 @@ import { SplashScreen } from "@capacitor/splash-screen";
 
 
 const App = () => {
-    console.log("App");
-
-    // Initialize the SafeArea plugin
-    SafeArea.enable({
-        config: {
-            customColorsForSystemBars: true,
-            statusBarColor: '#00000000', // transparent
-            statusBarContent: 'light',
-            navigationBarColor: '#00000000', // transparent
-            navigationBarContent: 'light',
-        }
-    });
-    initialize();
-
-    // Hide the splash screen
-    SplashScreen.hide();
-
-    // Initialize the database
     useEffect(() => {
+        // Initialize the SafeArea plugin
+        SafeArea.enable({
+            config: {
+                customColorsForSystemBars: true,
+                statusBarColor: '#00000000', // transparent
+                statusBarContent: 'light',
+                navigationBarColor: '#00000000', // transparent
+                navigationBarContent: 'light',
+            }
+        });
+        initialize();
+
+        // Hide the splash screen
+        SplashScreen.hide();
+
+        // Initialize the database
         initDB();
     }, []);
 
