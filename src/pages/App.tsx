@@ -13,7 +13,7 @@ import { initialize } from '@capacitor-community/safe-area';
 import '@capacitor-community/safe-area';
 import {
     BrowserRouter, Route, Routes
-} from "react-router";
+} from "react-router-dom";
 import TabBar from "@/components/FooterTabBar";
 import { SplashScreen } from "@capacitor/splash-screen";
 
