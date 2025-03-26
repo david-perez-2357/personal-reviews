@@ -37,7 +37,7 @@ const TabBar = memo(() => {
             <IonTabButton rel="prefetch" tab={routes[0].name} href={routes[0].href} className="w-full h-full">
                 <div className={`flex flex-col justify-center items-center p-3 w-full h-full safe-area-padding-bottom ${routes[0].href === pathname ? "bg-tertiary text-tertiary-foreground" : "text-primary"}`}>
                     <Star size={40} strokeWidth={routes[0].href === pathname ? 2 : 1} />
-                    {t('reviews')}
+                    {t(routes[0].name)}
                 </div>
             </IonTabButton>
 
