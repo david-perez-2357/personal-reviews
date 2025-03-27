@@ -16,6 +16,7 @@ import {
 } from "react-router-dom";
 import TabBar from "@/components/FooterTabBar";
 import { SplashScreen } from "@capacitor/splash-screen";
+import ManageItemReview from "@/pages/ManageItemReview";
 
 
 const App = () => {
@@ -40,7 +41,7 @@ const App = () => {
     }, []);
 
     // Hide footer tab bar on specific routes
-    const hideFooterRoutes = ["/reviews"];
+    const hideFooterRoutes = ["/reviews/create"];
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
@@ -53,6 +54,7 @@ const App = () => {
                                 <Route path="/reviews" />
                                 <Route path="/items" />
                                 <Route path="/more" />
+                                <Route path="/reviews/create" element={ManageItemReview()} />
                             </Routes>
                         </div>
                     </IonRouterOutlet>
