@@ -9,6 +9,9 @@ const config: CapacitorConfig = {
       androidDatabaseLocation: "default",
     },
   },
+  server: {
+    androidScheme: "https",
+  },
 };
 
 export default config;

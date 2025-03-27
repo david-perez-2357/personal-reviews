@@ -1,6 +1,6 @@
 {
-  "appTitle": "Mi Aplicación Ionic",
-  "welcome": "¡Bienvenido a nuestra aplicación!",
-  "welcomeUser": "¡Bienvenido, {{name}}!",
-  "changeLanguage": "Cambiar idioma"
+  "changeLanguage": "Cambiar idioma",
+  "reviews": "Reseñas",
+  "items": "Elementos",
+  "more": "Más"
 }

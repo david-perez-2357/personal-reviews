@@ -1,55 +1,65 @@
 import '@/styles/App.css'
 import '@ionic/react/css/core.css';
-import { IonApp, IonContent } from "@ionic/react";
-import { Button } from "@/components/ui/button.tsx";
+import {
+    IonApp,
+    IonRouterOutlet,
+    IonTabs,
+} from "@ionic/react";
 import { useEffect } from "react";
 import { initDB } from "@/lib/database-service";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { SafeArea } from "@capacitor-community/safe-area";
 import { initialize } from '@capacitor-community/safe-area';
 import '@capacitor-community/safe-area';
 import {
-    BrowserRouter,
-    Routes,
-    Route, Link
+    BrowserRouter, Route, Routes
 } from "react-router-dom";
+import TabBar from "@/components/FooterTabBar";
+import { SplashScreen } from "@capacitor/splash-screen";
 
 
-function App() {
-    SafeArea.enable({
-        config: {
-            customColorsForSystemBars: true,
-            statusBarColor: '#00000000', // transparent
-            statusBarContent: 'light',
-            navigationBarColor: '#00000000', // transparent
-            navigationBarContent: 'light',
-        }
-    });
-
-    initialize();
-
+const App = () => {
     useEffect(() => {
+        // Initialize the SafeArea plugin
+        SafeArea.enable({
+            config: {
+                customColorsForSystemBars: true,
+                statusBarColor: '#00000000', // transparent
+                statusBarContent: 'light',
+                navigationBarColor: '#00000000', // transparent
+                navigationBarContent: 'light',
+            }
+        });
+        initialize();
+
+        // Hide the splash screen
+        SplashScreen.hide();
+
+        // Initialize the database
         initDB();
     }, []);
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <IonApp>
-            <IonContent class="ion-padding">
-                <div className="safe-area-padding">
-                    <Button>
-                        pepep
-                    </Button>
-                    <BrowserRouter>
-                        <Routes>
-                            <Route path="/" element={<Link to={"/home"}>Home</Link>} />
-                        </Routes>
-                    </BrowserRouter>
-                </div>
-            </IonContent>
-        </IonApp>
+        <BrowserRouter>
+            <IonApp>
+                <IonTabs className="ion-padding">
+                    <IonRouterOutlet>
+                        <div className="safe-area-padding-top ps-5 pe-5">
+                            <Routes>
+                                <Route path="/reviews" />
+                                <Route path="/items" />
+                                <Route path="/more" />
+                            </Routes>
+                        </div>
+                    </IonRouterOutlet>
+
+                    <TabBar/>
+                </IonTabs>
+            </IonApp>
+        </BrowserRouter>
     </ThemeProvider>
   )
 }
 
-export default App
+export default App;

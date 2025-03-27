@@ -1,13 +1,14 @@
 :root {
     --ion-safe-area-top: 2.5rem;
     --safe-area-inset-top: env(safe-area-inset-top);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
 }
 
-.dark ion-content {
+.dark ion-app {
     --ion-background-color:#222831;
 }
 
-.light ion-content {
+.light ion-app {
     --ion-background-color:#EEEEEE;
 }
 
@@ -18,6 +19,19 @@ ion-content {
     --padding-end: 20px;
 }
 
-.safe-area-padding {
+.safe-area-padding-top {
     padding-top: calc(var(--safe-area-inset-top) + 1rem);
+}
+
+.safe-area-padding-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1.5rem);
+}
+
+.no-underline {
+    text-decoration: none!important;
+}
+
+/*--------- Desactivar estilos de ionic ---------*/
+ion-tab-button::part(native) {
+    text-decoration: none !important;
 }
