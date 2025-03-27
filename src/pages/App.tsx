@@ -39,6 +39,9 @@ const App = () => {
         initDB();
     }, []);
 
+    // Hide footer tab bar on specific routes
+    const hideFooterRoutes = ["/reviews"];
+
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
         <BrowserRouter>
@@ -54,7 +57,7 @@ const App = () => {
                         </div>
                     </IonRouterOutlet>
 
-                    <TabBar/>
+                    <TabBar hiddenRoutes={hideFooterRoutes}/>
                 </IonTabs>
             </IonApp>
         </BrowserRouter>

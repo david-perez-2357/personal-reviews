@@ -3,7 +3,7 @@ import {Box, Ellipsis, Star} from "lucide-react";
 import {useCurrentPath} from "@/hooks/get-location";
 import {memo, useEffect} from "react";
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const routes = [
     {
@@ -20,10 +20,15 @@ const routes = [
     },
 ]
 
-const TabBar = memo(() => {
+type TabBarProps = {
+    hiddenRoutes: string[];
+};
+
+const TabBar = memo(({ hiddenRoutes }: TabBarProps) => {
     const { t } = useTranslation();
     const pathname = useCurrentPath();
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         // Redirect to the first tab if the current path is /
@@ -31,6 +36,11 @@ const TabBar = memo(() => {
             navigate(routes[0].href);
         }
     }, [pathname, navigate]);
+
+    // Hide the tab bar on specific routes
+    if (hiddenRoutes.includes(location.pathname)) {
+        return null;
+    }
 
     return (
         <IonTabBar slot="bottom" className="flex bg-transparent justify-around min-h-24 border-t-2 border-t-primary">
