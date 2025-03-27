@@ -2,14 +2,19 @@
     --ion-safe-area-top: 2.5rem;
     --safe-area-inset-top: env(safe-area-inset-top);
     --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    --ion-background-color: #EEEEEE;
 }
 
-.dark ion-app {
-    --ion-background-color:#222831;
+.dark {
+    --ion-background-color: #222831;
 }
 
-.light ion-app {
-    --ion-background-color:#EEEEEE;
+.light {
+    --ion-background-color: #EEEEEE;
+}
+
+ion-content {
+    --background: var(--ion-background-color);
 }
 
 ion-content {
