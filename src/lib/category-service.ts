@@ -1,7 +1,7 @@
-import {Category} from "@/models/Category";
+import {Category} from "@/dto/category/Category";
 import {checkDB, db} from "@/lib/database-service";
-import {CategoryRating} from "@/models/CategoryRating";
-import {CategoryRatingValue} from "@/models/CategoryRatingValue";
+import {CategoryRating} from "@/dto/category/CategoryRating";
+import {CategoryRatingValue} from "@/dto/category/CategoryRatingValue";
 
 /**
  * Inserta una categoría en la base de datos.

@@ -1,6 +1,6 @@
 import {checkDB, db} from "@/lib/database-service";
-import {Review} from "@/models/Review";
-import {ReviewImage} from "@/models/ReviewImage";
+import {Review} from "@/dto/review/Review";
+import {ReviewImage} from "@/dto/review/ReviewImage";
 
 /**
  * Inserta una reseña en la base de datos.
