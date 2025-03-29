@@ -26,20 +26,23 @@ export const initDB = async () => {
                 `CREATE TABLE IF NOT EXISTS category (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 title TEXT NOT NULL,
-                type INTEGER NOT NULL DEFAULT 0,
+                "type" INTEGER NOT NULL DEFAULT 0,
                 color CHAR(7) NOT NULL CHECK (color LIKE '#______'),
+                icon VARCHAR(25),
                 created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                deleted BOOLEAN DEFAULT 0,
                 parent_id INTEGER,
                 FOREIGN KEY (parent_id) REFERENCES category(id) ON DELETE SET NULL
             );`,
             `CREATE TABLE IF NOT EXISTS item (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
+                "name" TEXT NOT NULL,
                 image TEXT,
                 rating INTEGER CHECK (rating BETWEEN 0 AND 5),
                 created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                deleted BOOLEAN DEFAULT 0,
                 category_id INTEGER NOT NULL,
                 FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
             );`,
@@ -56,6 +59,7 @@ export const initDB = async () => {
                 comment TEXT,
                 created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                deleted BOOLEAN DEFAULT 0,
                 item_id INTEGER NOT NULL,
                 FOREIGN KEY (item_id) REFERENCES item(id) ON DELETE CASCADE
             );`,
@@ -68,14 +72,14 @@ export const initDB = async () => {
             );`,
             `CREATE TABLE IF NOT EXISTS category_rating (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                value INTEGER NOT NULL CHECK (value BETWEEN 0 AND 100),
+                "name" TEXT NOT NULL,
+                "value" INTEGER NOT NULL CHECK (value BETWEEN 0 AND 100),
                 category_id INTEGER NOT NULL,
                 FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
             );`,
             `CREATE TABLE IF NOT EXISTS category_rating_value (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                value INTEGER NOT NULL CHECK (value BETWEEN 0 AND 100),
+                "value" INTEGER NOT NULL CHECK (value BETWEEN 0 AND 100),
                 item_id INTEGER NOT NULL,
                 category_rating_id INTEGER NOT NULL,
                 FOREIGN KEY (item_id) REFERENCES item(id) ON DELETE CASCADE,
