@@ -1,6 +1,6 @@
 export interface ReviewImage {
-    id?: number;
+    id: number;
     image: string;
-    created_at?: string;
+    created_at: string;
     review_id: number;
 }
