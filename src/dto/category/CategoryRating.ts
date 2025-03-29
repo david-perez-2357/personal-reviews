@@ -1,5 +1,5 @@
 export interface CategoryRating {
-    id?: number;
+    id: number;
     name: string;
     value: number;
     category_id: number;
