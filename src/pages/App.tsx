@@ -16,6 +16,7 @@ import {
 } from "react-router-dom";
 import TabBar from "@/components/FooterTabBar";
 import { SplashScreen } from "@capacitor/splash-screen";
+import ReviewPage from "@/pages/reviewPage";
 
 
 const App = () => {
@@ -47,7 +48,7 @@ const App = () => {
                     <IonRouterOutlet>
                         <div className="safe-area-padding-top ps-5 pe-5">
                             <Routes>
-                                <Route path="/reviews" />
+                                <Route path="/reviews" element={ReviewPage()} />
                                 <Route path="/items" />
                                 <Route path="/more" />
                             </Routes>
